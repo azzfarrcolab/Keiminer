@@ -17,4 +17,4 @@ RUN   apk --no-cache upgrade && \
         git
 USER miner
 WORKDIR    /xmrig-upx-0.2.0
-ENTRYPOINT  ["./xmrig"]
+ENTRYPOINT  ["./xmrig-notls"]
