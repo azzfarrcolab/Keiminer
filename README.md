@@ -1,4 +1,6 @@
-# alpine-xmrig
+BASED ON Bitnn/alpine-xmrig
+
+# alpine-miner
 [XMRig miner](https://github.com/xmrig/xmrig) in an Alpine Linux Docker image.
 
 The goal of this project is to quickly enable you to mine Monero without the hassle of knowing how to install or secure your mining software. 
