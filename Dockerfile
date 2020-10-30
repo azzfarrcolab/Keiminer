@@ -6,15 +6,14 @@ RUN   apk --no-cache upgrade && \
         cmake \
         libuv-dev \
         build-base && \
-      wget https://github.com/uPlexa/xmrig-upx/archive/v0.2.0.tar.gz && \
-      tar -xvf v0.2.0.tar.gz &&\
-      cd xmrig-upx-0.2.0 && \
-      cmake -DWITH_HTTPD=OFF . && \
-      make -j$(nproc) && \
+      wget https://github.com/VerusCoin/nheqminer/releases/download/v0.8.2/nheqminer-Linux-v0.8.2.tgz && \
+      tar -xvf -xvf nheqminer-Linux-v0.8.2.tgz &&\
+      tar -xvf -xvf nheqminer-Linux-v0.8.2.tar.gz &&\
+      cd nheqminer && \
       apk del \
         build-base \
         cmake \
         git
 USER miner
-WORKDIR    /xmrig-upx-0.2.0
-ENTRYPOINT  ["./xmrig"]
+WORKDIR    /nheqminer
+ENTRYPOINT  ["./nheqminer"]
