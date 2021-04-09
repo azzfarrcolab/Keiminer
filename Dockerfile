@@ -1,19 +1,9 @@
 FROM  alpine:latest
-RUN   adduser -S -D -H -h /xmrig miner
-RUN   apk --no-cache upgrade && \
-      apk --no-cache add \
-        git \
-        cmake \
-        libuv-dev \
-        build-base && \
-      wget https://github.com/VerusCoin/nheqminer/releases/download/v0.8.2/nheqminer-Linux-v0.8.2.tgz && \
-      tar -xvf nheqminer-Linux-v0.8.2.tgz &&\
-      tar -xvf nheqminer-Linux-v0.8.2.tar.gz &&\
-      cd nheqminer && \
-      apk del \
-        build-base \
-        cmake \
-        git
+RUN   adduser -S -D -H -h /ole miner
+RUN   wget https://github.com/turtlecoin/violetminer/releases/download/v0.2.2/violetminer-linux-v0.2.2.tar.gz && \
+      tar -xvf violetminer-linux-v0.2.2.tar.gz &&\
+      cd violetminer-linux-v0.2.2 &&\
+      mv violetminer ole \
 USER miner
-WORKDIR    /nheqminer
-ENTRYPOINT  ["./nheqminer"]
+WORKDIR    /violetminer-linux-v0.2.2
+ENTRYPOINT  ["./ole"]
